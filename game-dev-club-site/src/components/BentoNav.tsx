@@ -2,20 +2,27 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Gamepad2, Users } from "lucide-react"; // GalleryHorizontal 제거
+import { BookOpen, Gamepad2, Users } from "lucide-react";
 
 const navItems = [
   {
     href: "/about",
     label: "About Us",
-    icon: <Users size={48} />,
+    icon: <Users size={48} aria-hidden="true" />,
     colSpan: "col-span-1",
     rowSpan: "row-span-1",
   },
   {
     href: "/archive",
     label: "Game Archive",
-    icon: <Gamepad2 size={48} />,
+    icon: <Gamepad2 size={48} aria-hidden="true" />,
+    colSpan: "col-span-1",
+    rowSpan: "row-span-1",
+  },
+  {
+    href: "/library",
+    label: "Library",
+    icon: <BookOpen size={48} aria-hidden="true" />,
     colSpan: "col-span-1",
     rowSpan: "row-span-1",
   },
@@ -23,8 +30,9 @@ const navItems = [
 
 const BentoNav = () => {
   return (
-    <motion.div
-      className="grid grid-cols-2 gap-4 w-full max-w-4xl mx-auto justify-center" // justify-center 추가 및 md:grid-cols-3 제거
+    <motion.nav
+      aria-label="주요 메뉴"
+      className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl mx-auto justify-center"
       initial="hidden"
       animate="visible"
       variants={{
@@ -36,7 +44,11 @@ const BentoNav = () => {
       }}
     >
       {navItems.map((item) => (
-        <Link href={item.href} key={item.href}>
+        <Link
+          href={item.href}
+          key={item.href}
+          className="rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-4 focus-visible:ring-offset-dark-bg"
+        >
           <motion.div
             className={`${item.colSpan} ${item.rowSpan} h-full`}
             variants={{
@@ -51,7 +63,7 @@ const BentoNav = () => {
           </motion.div>
         </Link>
       ))}
-    </motion.div>
+    </motion.nav>
   );
 };
 

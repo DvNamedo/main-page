@@ -1,0 +1,24 @@
+.preview {
+  color: #f8fafc;
+  font-family: "Noto Sans KR", Inter, system-ui, sans-serif;
+  overflow-wrap: anywhere;
+}
+.preview :is(button, input, select, textarea, a, summary):focus-visible {
+  outline: 3px solid #00f0b5;
+  outline-offset: 4px;
+}
+.preview :is(input[type="checkbox"], input[type="radio"]) { accent-color: #00f0b5; width: 1.2rem; height: 1.2rem; }
+.preview :is(input, select, textarea) { color-scheme: dark; }
+.recordTable { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.recordTable th { text-align: left; color: #cbd5e1; font-size: .875rem; }
+.recordTable :is(th, td) { padding: .75rem; border-bottom: 1px solid #64748b; vertical-align: top; overflow-wrap: anywhere; }
+.recordTable th:first-child { width: 14%; }
+.selectedRow { background: #003c32; outline: 2px solid #00f0b5; outline-offset: -2px; }
+@media (max-width: 1023px) {
+  .recordTable, .recordTable tbody { display: block; }
+  .recordTable thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .recordTable caption { display: block; }
+  .recordTable tr { display: block; border: 1px solid #64748b; border-radius: .75rem; margin-bottom: 1rem; padding: .5rem; }
+  .recordTable td { display: block; border: 0; padding: .5rem; }
+  .recordTable td::before { content: attr(data-label); display: block; color: #cbd5e1; font-size: .75rem; margin-bottom: .25rem; }
+}
