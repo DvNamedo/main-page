@@ -62,7 +62,7 @@ export default function AboutPage() {
             <li>매 학기 게임 개발 경진대회 진행</li>
             <li>대외 활동 및 공모전 참가</li>
             <li>기업과 전시회 탐방</li>
-            <li>전국 대학생 게임제작 동아리 연합 "UNIDEV" 활동</li>
+            <li>전국 대학생 게임제작 동아리 연합 &quot;UNIDEV&quot; 활동</li>
           </motion.ul>
           <motion.div variants={itemVariants} className="not-prose mt-8">
             <a
